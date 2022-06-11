@@ -1,7 +1,7 @@
-import React from 'react'
+import { useRef } from "react";
 
 function ImageZoom({ zoom, src, alt, background }) {
-  const zoomRef = React.useRef(zoom.clone({ background }))
+  const zoomRef = useRef(zoom.clone({ background }))
 
   function attachZoom(image) {
     zoomRef.current.attach(image)
