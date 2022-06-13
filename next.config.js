@@ -1,7 +1,4 @@
 module.exports = {
-  async redirects() {
-    return [];
-  },
   async rewrites() {
     return [
       {
