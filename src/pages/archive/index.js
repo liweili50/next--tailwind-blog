@@ -2,10 +2,11 @@ import Link from "next/link";
 import { useQuery } from "react-query";
 import dayjs from "dayjs";
 import { getArchiveList } from "../../api/post";
-// import "./index.css";
+import { useTitle } from "react-use";
 
 function Archive() {
   const { data, isLoading } = useQuery("archive", getArchiveList);
+  useTitle("归档");
   return (
     isLoading === false && (
       <ul className="archive-content p-5 lg:p-10 bg-base-100">

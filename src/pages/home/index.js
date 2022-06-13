@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import { useInfiniteQuery } from "react-query";
 import { useInView } from "react-intersection-observer";
 import Card from "../../components/card";
 import Post from "../../components/post";
 import { getPostsList } from "../../api/post";
+import { useTitle } from "react-use";
+
 
 export default function Home({ Component, pageProps }) {
   // let keyword = new URLSearchParams(props.location.search).get("keyword");
@@ -38,6 +40,7 @@ export default function Home({ Component, pageProps }) {
     }
   );
   const { ref, inView } = useInView({ threshold: 0 });
+  useTitle('首页');
   useEffect(() => {
     if (hasNextPage && inView) {
       fetchNextPage();

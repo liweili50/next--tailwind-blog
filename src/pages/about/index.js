@@ -1,5 +1,8 @@
 // import img from "../../assets/img/placeholder.jpg";
+import {useTitle} from 'react-use';
+
 function About() {
+  useTitle('关于');
   return (
     <div className="prose dark:prose-invert max-w-full p-5 lg:p-10 bg-base-100">
       <h1>Hi there 👏</h1>

@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
-
-// import "./index.css";
+import { useTitle } from "react-use";
 import { getPostsByTag } from "../../api/post";
 
 const ArticleList = function ({ list }) {
@@ -28,8 +27,8 @@ const ArticleList = function ({ list }) {
 const Tag = function () {
   const [list, setList] = useState([]);
   const router = useRouter();
+  useTitle(router.query.pid);
   const { pid } = router.query;
-  console.log(pid)
   useEffect(() => {
     const handleGetArticleList = function () {
       getPostsByTag({ tag: pid }).then((res) => {
