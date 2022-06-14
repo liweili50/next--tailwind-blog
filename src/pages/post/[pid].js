@@ -48,7 +48,7 @@ export default function Post() {
   useTitle(data?.title);
   useEffect(() => {
     handleGetArticle();
-  }, [data]);
+  }, []);
   const handleGitalkInit = function ({ title }) {
     const gitalk = new Gitalk({
       clientID: "455057ff16e070218483",
@@ -78,10 +78,8 @@ export default function Post() {
   return (
     data && (
       <div className="p-5 lg:p-10 bg-base-100">
-        <h1 className=""> {data.title}</h1>
-        <h2 className="subtitle has-text-weight-normal is-size-6">
-          {data.time}
-        </h2>
+        <h1> {data.title}</h1>
+        <p className="subtitle py-2 text-gray-500">{data.time}</p>
         <Markdown
           className="prose prose-pre:bg-base-200 prose-pre:text-gray-700 dark:text-white dark:prose-invert max-w-full"
           options={{
