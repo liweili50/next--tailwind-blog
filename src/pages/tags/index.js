@@ -15,7 +15,7 @@ function Tags() {
         <div className="flex flex-wrap justify-start items-center	">
           {data.data.map((tag) => (
             <Link href={"/tag/" + tag._id} key={tag._id}>
-              <a className="box-content	p-2 bg-base-200 rounded mx-2 mb-4 opacity-80">
+              <a className="tag">
                 {tag._id}
               </a>
             </Link>

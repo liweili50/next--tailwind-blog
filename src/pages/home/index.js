@@ -64,7 +64,7 @@ export default function Home({ Component, pageProps }) {
             ))}
 
             <div
-              className="has-text-centered has-text-grey-light is-size-7 mx-4"
+              className="text-xs text-gray-400 text-center"
               ref={ref}
             >
               {isFetchingNextPage

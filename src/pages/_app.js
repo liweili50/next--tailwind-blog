@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import Layout from "../components/layout";
 import "../assets/tailwind.css";
-import "../assets/style.css";
+import "../assets/strawberryicon.css";
 
 
 const queryClient = new QueryClient();

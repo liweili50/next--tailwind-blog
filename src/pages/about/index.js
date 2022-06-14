@@ -1,5 +1,6 @@
-// import img from "../../assets/img/placeholder.jpg";
 import {useTitle} from 'react-use';
+import Image from 'next/image'
+import picture from "../../assets/img/placeholder.jpg";
 
 function About() {
   useTitle('关于');
@@ -116,7 +117,7 @@ function About() {
       </p>
       <h3>Others</h3>
       <figure className="image is-2by1 has-margin-5-mobile">
-        {/* <img src={img} alt="" /> */}
+        <Image src={picture} alt="" />
         <figcaption>Fate Saber</figcaption>
       </figure>
       <p>
