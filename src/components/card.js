@@ -1,6 +1,5 @@
 import { useQueries } from "react-query";
 import { getBingDailyImage, getJonasEmotion } from "../api/sundry";
-// import "balloon-css";
 
 const Card = () => {
   const [res1, res2] = useQueries([
@@ -46,8 +45,8 @@ const Card = () => {
         )}
       </div>
       <div className="p-6 flex">
-        <div class="avatar">
-          <div class="w-16 rounded">
+        <div className="avatar">
+          <div className="w-16 rounded">
             <img src="https://avatars2.githubusercontent.com/u/19683924?s=460&v=4" />
           </div>
         </div>
@@ -61,12 +60,9 @@ const Card = () => {
       <div className="px-6">
         <div style={{ minWidth: 200 + "px" }}>
           {res2.isSuccess &&
-            res2.data.data.emotion.split(",").map((item, index) => (
-              <>
-                {item}
-                <br />
-              </>
-            ))}
+            res2.data.data.emotion
+              .split(",")
+              .map((item) => <p key={item}>{item}</p>)}
 
           <p className="link link-hover">
             <a
@@ -84,7 +80,7 @@ const Card = () => {
               key={item.icon}
               rel="noopener noreferrer"
               target="_blank"
-              class="tooltip" 
+              className="tooltip"
               data-tip={item.label}
               href={item.href}
             >

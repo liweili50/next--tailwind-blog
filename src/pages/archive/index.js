@@ -9,12 +9,10 @@ function Archive() {
   useTitle("归档");
   return (
     isLoading === false && (
-      <ul className="archive-content p-5 lg:p-10 bg-base-100">
+      <ul className="p-5 lg:p-10 bg-base-100">
         {data.data.map((archive) => (
           <li key={archive._id}>
-            <h5 className="is-size-4 has-text-weight-normal">
-              {archive.category}年
-            </h5>
+            <h1 className="">{archive.category}年</h1>
             <ul className="archive-list">
               {archive.list.map((item) => (
                 <li key={item.id}>

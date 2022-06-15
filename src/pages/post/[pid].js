@@ -33,7 +33,7 @@ const Code = ({ className, children }) => {
     const html = hljs.highlight(children, { language }).value;
     return (
       <code
-        className="max-w-full p-4 dark:text-white"
+        className="max-w-full p-4"
         dangerouslySetInnerHTML={{ __html: html }}
       ></code>
     );
@@ -81,7 +81,7 @@ export default function Post() {
         <h1> {data.title}</h1>
         <p className="subtitle py-2 text-gray-500">{data.time}</p>
         <Markdown
-          className="prose prose-pre:bg-base-200 prose-pre:text-gray-700 dark:text-white dark:prose-invert max-w-full"
+          className="prose prose-pre:bg-base-200 prose-pre:text-gray-700 dark:prose-invert max-w-full"
           options={{
             forceBlock: true,
             overrides: {

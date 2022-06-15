@@ -7,7 +7,6 @@ import Post from "../../components/post";
 import { getPostsList } from "../../api/post";
 import { useTitle } from "react-use";
 
-
 export default function Home({ Component, pageProps }) {
   // let keyword = new URLSearchParams(props.location.search).get("keyword");
   const {
@@ -40,7 +39,7 @@ export default function Home({ Component, pageProps }) {
     }
   );
   const { ref, inView } = useInView({ threshold: 0 });
-  useTitle('首页');
+  useTitle("首页");
   useEffect(() => {
     if (hasNextPage && inView) {
       fetchNextPage();
@@ -48,25 +47,17 @@ export default function Home({ Component, pageProps }) {
   }, [inView, hasNextPage, fetchNextPage]);
   return (
     <div className="grid grid-cols-8 lg:grid-cols-12 gap-4">
-      <div className="col-span-8 ">
+      <div className="col-span-8">
         {status === "loading" ? (
           <div className="column">Loading...</div>
         ) : status === "error" ? (
           <div className="column">{error.message}</div>
         ) : (
           <div className="column space-y-4">
-            {data.pages.map((page) => (
-              <>
-                {page.list.map((post) => (
-                  <Post key={post._id} post={post} />
-                ))}
-              </>
-            ))}
-
-            <div
-              className="text-xs text-gray-400 text-center"
-              ref={ref}
-            >
+            {data.pages.map((page) =>
+              page.list.map((post) => <Post key={post._id} post={post} />)
+            )}
+            <div className="text-xs text-gray-400 text-center" ref={ref}>
               {isFetchingNextPage
                 ? "加载中..."
                 : hasNextPage
