@@ -7,13 +7,13 @@ import { getPostsByTag } from "../../api/post";
 
 const ArticleList = function ({ list }) {
   const listItems = list.map((article) => (
-    <li key={article._id}>
-      <span className="icon">
+    <li key={article._id} className="my-4 cursor-pointer">
+      <span className="icon text-sm">
         <i className="czs-square-o" aria-hidden="true" />
       </span>
       <Link href={"/post/" + article._id}>
         <span>
-          <span className="time">
+          <span className="px-4">
             {dayjs(article.createTime).format("YYYY-MM-DD HH:mm:ss")}
           </span>
           {article.title}

@@ -15,13 +15,13 @@ function Archive() {
             <h1 className="">{archive.category}年</h1>
             <ul className="archive-list">
               {archive.list.map((item) => (
-                <li key={item.id}>
-                  <span className="icon">
+                <li key={item.id} className="my-4 cursor-pointer">
+                  <span className="icon text-sm">
                     <i className="czs-square-o" aria-hidden="true" />
                   </span>
                   <Link href={"post/" + item.id} className="has-text-link-dark">
                     <span>
-                      <span className="time">
+                      <span className="px-4">
                         {dayjs(item.createTime).format("YYYY-MM-DD")}
                       </span>
                       {item.title}
